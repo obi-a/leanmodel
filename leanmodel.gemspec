@@ -24,6 +24,7 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "Rakefile",
     "VERSION",
+    "leanmodel.gemspec",
     "lib/lean_model.rb",
     "lib/lean_model/base.rb",
     "test/helper.rb",
