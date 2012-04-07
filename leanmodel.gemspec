@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = "leanmodel"
-  s.version = "0.1.0"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["obi-a"]
@@ -25,8 +25,8 @@ Gem::Specification.new do |s|
     "Rakefile",
     "VERSION",
     "leanmodel.gemspec",
-    "lib/lean_model.rb",
     "lib/lean_model/base.rb",
+    "lib/leanmodel.rb",
     "test/helper.rb",
     "test/lint_test.rb",
     "test/test_leanmodel.rb"
