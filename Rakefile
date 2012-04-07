@@ -17,8 +17,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "leanmodel"
   gem.homepage = "http://github.com/obi-a/leanmodel"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{Simple ORM for CouchDB based on ActiveModel}
+  gem.description = %Q{Simple ORM for CouchDB based on ActiveModel}
   gem.email = "obioraakubue@yahoo.com"
   gem.authors = ["obi-a"]
   # dependencies defined in Gemfile
@@ -28,7 +28,7 @@ Jeweler::RubygemsDotOrgTasks.new
 require 'rake/testtask'
 Rake::TestTask.new(:test) do |test|
   test.libs << 'lib' << 'test'
-  test.pattern = 'test/**/test_*.rb'
+  test.pattern = 'test/**/*test*.rb'
   test.verbose = true
 end
 
