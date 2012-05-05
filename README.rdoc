@@ -72,6 +72,11 @@ Retrieve all movies from database
       {"_id"=>"9da82f5a-0ce4-46a0-863c-7d8f2ed84439", "_rev"=>"10-60e258f605801a31e64b928bb81f7ea6", 
              "title"=>"Jurassic Park", "year"=>"1993", "story"=>"Raptors brought back in time"}]
 
+==Developed & Tested
+Ubuntu
+CouchDB 1.0.1
+Ruby 1.9.3
+
 == Copyright
 
 Copyright (c) 2012 obi-a. See LICENSE.txt for
