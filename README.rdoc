@@ -1,6 +1,6 @@
 = Leanmodel
 
-Simple ORM for CouchDB. This a work in progress...
+Simple ORM for CouchDB. Based on ActiveModel. This a work in progress...
 
 ==Installation
  gem install leanmodel
