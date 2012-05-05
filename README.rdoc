@@ -42,8 +42,8 @@ Database name
 Write this model to the database
  movie.save
  #=> true
-Returns true if the model was written successfully, 
-The method creates a new couchDB document with the model's attribute values 
+Returns true if the model was written successfully.
+This method creates a new couchDB document with the model's attribute values 
 
 Delete this model from database
  movie.destroy
