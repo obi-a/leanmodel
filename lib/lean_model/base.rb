@@ -79,6 +79,10 @@ module LeanModel
    end
  end
 
+ def service
+  self
+ end
+
  def update_attributes(hash)
    #update this model on database
    if self.valid?
