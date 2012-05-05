@@ -12,7 +12,7 @@ Simple ORM for CouchDB. This a work in progress...
 
 Each model class represents a document in a CouchDB database.
 The class name must be singular to the Couchdb database name.
-The class below represents a document in the couchDB database called movies. 
+The class below represents a document in a couchDB database called movies. 
  class Movie < LeanModel::Base  
   attributes  :title, :year, :story
  end
