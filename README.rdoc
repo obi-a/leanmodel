@@ -30,6 +30,8 @@ Configure couchDB
                   hash["AuthSession"]
                     }
  movie.config(token)
+Note: you need the leanback rubygem for this line hash = Couchdb.login(@couchdb_username,@couchdb_password) 
+
 
 CouchDB Authsession token
  movie.token
