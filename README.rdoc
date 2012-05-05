@@ -1,16 +1,73 @@
-= leanmodel
+= Leanmodel
 
-Description goes here.
+Simple ORM for CouchDB. This a work in progress...
 
-== Contributing to leanmodel
+==Installation
+ gem install leanmodel
+
+==Usage
  
-* Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
-* Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it.
-* Fork the project.
-* Start a feature/bugfix branch.
-* Commit and push until you are happy with your contribution.
-* Make sure to add tests for it. This is important so I don't break it in a future version unintentionally.
-* Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.
+ require 'leanback'
+ require 'leanmodel'
+
+ #name of the class must be singular to a Couchdb database 
+ #the class below represents a document in the movies database
+ class Movie < LeanModel::Base  
+  attributes  :title, :year, :story
+ end
+
+ movie = Movie.new({:title => 'Jurassic Park',:year => '1993', :story => 'Raptors brought back in time'})
+
+ movie.attributes
+ #=> {"title"=>"Jurassic Park", "year"=>"1993", "story"=>"Raptors brought back in time"}
+
+ #configure couchDB
+ @couchdb_username = "obi"
+ @couchdb_password = "trusted"
+ 
+ token = lambda {
+                  hash = Couchdb.login(@couchdb_username,@couchdb_password) 
+                  hash["AuthSession"]
+                    }
+ movie.config(token)
+
+ #couchDB Authsession token
+ movie.token
+ #=> b2JpOjRGQTIxODA4Oq42xHwvvoK9ASvtB55ODSdEpEgB
+
+ #database name 
+ movie.database
+ #=> movies
+
+ #write this model to the database
+ movie.save
+ #=> true
+ #returns true if the model was written successfully, 
+ #this method creates a new couchDB document with the model's attribute values 
+
+ #delete this model from database
+ movie.destroy
+ #=>{"ok"=>true, "id"=>"eb9ecefa-afdd-426a-a21d-f8307fa2b156", "rev"=>"2-98bc85346eff4a663e39395163aaa194"}
+ #this deletes the document that represents this model from the database
+
+ #find a movie using it's document id
+ movie.service.find('9da82f5a-0ce4-46a0-863c-7d8f2ed84439')
+ #=> {"_id"=>"9da82f5a-0ce4-46a0-863c-7d8f2ed84439", "_rev"=>"6-6367dc24342f1590935a99087a57d8c5", 
+                      "title"=>"Jurassic Park", "year"=>"1996", "story"=>"Raptors brought back in time"}
+
+ 
+ #update a model on the database, requires that the document ID is included in the data
+ data = {:id => '9da82f5a-0ce4-46a0-863c-7d8f2ed84439', :year => '1993' }
+ movie.service.update_attributes(data)
+ #=> true
+ #returns true if successful
+
+ #retrieve all movies from database
+ movie.service.all
+ #=> [{"_id"=>"0fb32571-44c4-48c4-9423-55ea7c95c192", "_rev"=>"1-f76f5d4f431cafbdb3f4d43388a03c89", 
+         "title"=>"Hugo", "year"=>"2011", "story"=>"Film history"}, 
+      {"_id"=>"9da82f5a-0ce4-46a0-863c-7d8f2ed84439", "_rev"=>"10-60e258f605801a31e64b928bb81f7ea6", 
+             "title"=>"Jurassic Park", "year"=>"1993", "story"=>"Raptors brought back in time"}]
 
 == Copyright
 
