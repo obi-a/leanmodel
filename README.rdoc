@@ -10,8 +10,8 @@ Simple ORM for CouchDB. This a work in progress...
  require 'leanback'
  require 'leanmodel'
 
- #name of the class must be singular to a Couchdb database 
- #the class below represents a document in the movies database
+Name of the class must be singular to a Couchdb database name .
+The class below represents a document in the database called movies
  class Movie < LeanModel::Base  
   attributes  :title, :year, :story
  end
