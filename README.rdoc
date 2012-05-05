@@ -56,11 +56,11 @@ Find a movie using it's document id
                       "title"=>"Jurassic Park", "year"=>"1996", "story"=>"Raptors brought back in time"}
 
  
-Update a model on the database, requires that the document ID is included in the data
+Update a model on the database, 
  data = {:id => '9da82f5a-0ce4-46a0-863c-7d8f2ed84439', :year => '1993' }
  movie.service.update_attributes(data)
  #=> true
-Returns true if successful
+Returns true if successful, requires that the document ID is included in the data
 
 Retrieve all movies from database
  movie.service.all
