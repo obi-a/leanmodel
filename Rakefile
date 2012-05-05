@@ -17,8 +17,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "leanmodel"
   gem.homepage = "http://github.com/obi-a/leanmodel"
   gem.license = "MIT"
-  gem.summary = %Q{Basic ActiveModel, does nothing}
-  gem.description = %Q{Basic ActiveModel, does nothing}
+  gem.summary = %Q{Simple ORM for couchDB}
+  gem.description = %Q{Simple ORM for couchDB}
   gem.email = "obioraakubue@yahoo.com"
   gem.authors = ["obi-a"]
   # dependencies defined in Gemfile
