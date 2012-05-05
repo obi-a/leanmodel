@@ -73,9 +73,9 @@ Retrieve all movies from database
              "title"=>"Jurassic Park", "year"=>"1993", "story"=>"Raptors brought back in time"}]
 
 ==Developed & Tested
-Ubuntu
-CouchDB 1.0.1
-Ruby 1.9.3
+*Ubuntu 11.04
+*CouchDB 1.0.1
+*Ruby 1.9.3
 
 == Copyright
 
