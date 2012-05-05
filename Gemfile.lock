@@ -26,6 +26,7 @@ GEM
       shoulda-matchers (~> 1.0.0)
     shoulda-context (1.0.0)
     shoulda-matchers (1.0.0)
+    uuidtools (2.1.2)
 
 PLATFORMS
   ruby
@@ -38,3 +39,4 @@ DEPENDENCIES
   rcov
   rdoc (~> 3.12)
   shoulda
+  uuidtools

@@ -3,6 +3,8 @@ source "http://rubygems.org"
 # Example:
  gem "activesupport"
  gem "activemodel"
+ gem "uuidtools"
+ 
 
 # Add dependencies to develop your gem here.
 # Include everything needed to run rake, tests, features, etc.
