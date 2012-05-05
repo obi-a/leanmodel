@@ -39,30 +39,30 @@ The class below represents a document in the database called movies
  movie.database
  #=> movies
 
- #write this model to the database
+Write this model to the database
  movie.save
  #=> true
- #returns true if the model was written successfully, 
- #this method creates a new couchDB document with the model's attribute values 
+Returns true if the model was written successfully, 
+The method creates a new couchDB document with the model's attribute values 
 
- #delete this model from database
+Delete this model from database
  movie.destroy
  #=>{"ok"=>true, "id"=>"eb9ecefa-afdd-426a-a21d-f8307fa2b156", "rev"=>"2-98bc85346eff4a663e39395163aaa194"}
- #this deletes the document that represents this model from the database
+This deletes the document that represents this model from the database
 
- #find a movie using it's document id
+Find a movie using it's document id
  movie.service.find('9da82f5a-0ce4-46a0-863c-7d8f2ed84439')
  #=> {"_id"=>"9da82f5a-0ce4-46a0-863c-7d8f2ed84439", "_rev"=>"6-6367dc24342f1590935a99087a57d8c5", 
                       "title"=>"Jurassic Park", "year"=>"1996", "story"=>"Raptors brought back in time"}
 
  
- #update a model on the database, requires that the document ID is included in the data
+Update a model on the database, requires that the document ID is included in the data
  data = {:id => '9da82f5a-0ce4-46a0-863c-7d8f2ed84439', :year => '1993' }
  movie.service.update_attributes(data)
  #=> true
- #returns true if successful
+Returns true if successful
 
- #retrieve all movies from database
+Retrieve all movies from database
  movie.service.all
  #=> [{"_id"=>"0fb32571-44c4-48c4-9423-55ea7c95c192", "_rev"=>"1-f76f5d4f431cafbdb3f4d43388a03c89", 
          "title"=>"Hugo", "year"=>"2011", "story"=>"Film history"}, 
