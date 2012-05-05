@@ -21,7 +21,7 @@ The class below represents a document in the database called movies
  movie.attributes
  #=> {"title"=>"Jurassic Park", "year"=>"1993", "story"=>"Raptors brought back in time"}
 
- #configure couchDB
+Configure couchDB
  @couchdb_username = "obi"
  @couchdb_password = "trusted"
  
@@ -31,11 +31,11 @@ The class below represents a document in the database called movies
                     }
  movie.config(token)
 
- #couchDB Authsession token
+CouchDB Authsession token
  movie.token
  #=> b2JpOjRGQTIxODA4Oq42xHwvvoK9ASvtB55ODSdEpEgB
 
- #database name 
+Database name 
  movie.database
  #=> movies
 
