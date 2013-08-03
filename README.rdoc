@@ -1,3 +1,5 @@
+==This was just an experiment. Nothing much to see here
+
 = Leanmodel
 
 Simple ORM for CouchDB. Based on ActiveModel. This a work in progress...
